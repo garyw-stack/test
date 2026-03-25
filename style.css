@@ -518,7 +518,7 @@ a {
     background-color: #f9f9f9;
 }
 
-@media (prefer-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     body {
         background-color: #000000;
         color: white;
