@@ -143,24 +143,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-const img = document.getElementById('fullscreen-image');
+// Select ALL images you want to make fullscreen-clickable
+const images = document.querySelectorAll('.fullscreen-image');   // ← change selector as needed
 
-img.addEventListener('click', () => {
-    if (!document.fullscreenElement) {
-        // Request fullscreen mode for the image element
-        if (img.requestFullscreen) {
-            img.requestFullscreen();
-        } else if (img.webkitRequestFullscreen) { /* Safari */
-            img.webkitRequestFullscreen();
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            // Enter fullscreen
+            if (img.requestFullscreen) {
+                img.requestFullscreen();
+            } else if (img.webkitRequestFullscreen) {     // Safari
+                img.webkitRequestFullscreen();
+            } else if (img.msRequestFullscreen) {         // IE11
+                img.msRequestFullscreen();
+            }
+        } else {
+            // Exit fullscreen
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {   // Safari
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {       // IE11
+                document.msExitFullscreen();
+            }
         }
-    } else {
-        // Exit fullscreen mode if already active
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) { /* Safari */
-            document.webkitExitFullscreen();
-        }
-    }
+    });
 });
-
 
