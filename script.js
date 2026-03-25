@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!container) return;
 
    const footerText = `
-   Last updated: <strong>March 24, 2026</strong> • Maintained with care 
+   Last updated: <strong>March 24, 2026</strong> • The Track Family Fun Parks
     `; // Edit Text ONLY
 
   container.innerHTML = `
@@ -144,29 +144,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Select ALL images you want to make fullscreen-clickable
-const images = document.querySelectorAll('.fullscreen-image');   // ← change selector as needed
+const images = document.querySelectorAll('.fullscreen-image');
 
 images.forEach(img => {
-    img.addEventListener('click', () => {
-        if (!document.fullscreenElement) {
-            // Enter fullscreen
-            if (img.requestFullscreen) {
-                img.requestFullscreen();
-            } else if (img.webkitRequestFullscreen) {     // Safari
-                img.webkitRequestFullscreen();
-            } else if (img.msRequestFullscreen) {         // IE11
-                img.msRequestFullscreen();
+    img.addEventListener('click', async () => {
+        try {
+            if (!document.fullscreenElement) {
+                // Enter fullscreen – modern + prefixed for Safari
+                if (img.requestFullscreen) {
+                    await img.requestFullscreen();
+                } else if (img.webkitRequestFullscreen) {
+                    await img.webkitRequestFullscreen();   // Safari (macOS + iPad)
+                } else if (img.msRequestFullscreen) {
+                    img.msRequestFullscreen();             // Old IE (rare now)
+                } else {
+                    console.warn('Fullscreen not supported on this device/browser');
+                    // Optional: show a message to iPhone users
+                    alert("Fullscreen is not supported on iPhone Safari.\n\nTry rotating your device or using a different browser.");
+                }
+            } else {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    await document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
             }
-        } else {
-            // Exit fullscreen
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.webkitExitFullscreen) {   // Safari
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) {       // IE11
-                document.msExitFullscreen();
-            }
+        } catch (err) {
+            console.error('Fullscreen error:', err);
         }
     });
 });
-
