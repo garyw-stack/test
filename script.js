@@ -177,3 +177,40 @@ images.forEach(img => {
         }
     });
 });
+
+
+// Function to apply theme
+function setTheme(isDark) {
+    if (isDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+    }
+}
+
+// Initial detection
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+setTheme(prefersDark.matches);
+
+// Listen for changes (user switches OS theme)
+prefersDark.addEventListener('change', (e) => {
+    setTheme(e.matches);
+});
+
+// Optional: Manual toggle button
+const toggleBtn = document.getElementById('theme-toggle');
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+        const isCurrentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        setTheme(!isCurrentlyDark);
+        
+        // Optional: save user preference in localStorage (overrides system)
+        localStorage.setItem('theme', !isCurrentlyDark ? 'dark' : 'light');
+    });
+}
+
+// Optional: Respect saved user preference on load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    setTheme(savedTheme === 'dark');
+}
