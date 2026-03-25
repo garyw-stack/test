@@ -517,3 +517,10 @@ a {
     transition: max-height 0.5s ease-out;
     background-color: #f9f9f9;
 }
+
+@media (prefer-color-scheme: dark) {
+    body {
+        background-color: #000000;
+        color: white;
+    }
+}
