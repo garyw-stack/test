@@ -3,45 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="icon" href="logo_default.png" type="image/png"> -->
-    <title>The Track Family Fun Parks</title>
-    <meta name="description" content="Park Information">
+    <link rel="icon" href="images/gs-logo.jpeg" type="image/jpeg">
+    <title>Select a Location | The Track Family Fun Parks</title>
+    <meta name="description" content="Park information for The Track Family Fun Parks locations">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
 
-      <button class="menu-btn" id="menuBtn">☰</button>
+    <nav class="sidebar" id="sidebar">
+        <div id="sidebar-container"></div>
+    </nav>
 
-   
-  <nav class="sidebar" id="sidebar">
+    <!-- Overlay (mobile) -->
+    <div class="overlay" id="overlay"></div>
 
-    <div id="sidebar-container"></div>
+    <div class="main-content" id="mainContent">
 
-  </nav>
+        <h1>SELECT THE LOCATION YOU WOULD LIKE TO VIEW</h1>
 
-  
-  <!-- Overlay (for mobile) -->
-  <div class="overlay" id="overlay"></div>
-  <div class="main-content" id="mainContent">
-
-    <!--Main Content-->
-    <div>
-        <h1>SELECT THE THE LOCATION<br>YOU WOULD LIKE TO VIEW</h1>
-        
         <a href="gstrack.html">
-        <div>
-            <h2>THE TRACK - GULF SHORES</h2>
-            
-        </div>
+            <div class="version live">
+                <h2>THE TRACK &mdash; GULF SHORES <span class="label live-label">LIVE</span></h2>
+            </div>
         </a>
-   
-        
-        <div class="footer" id="footer-container">
-            
-        </div>
+
+        <a href="dtrack.html">
+            <div class="version tbd">
+                <h2>THE TRACK &mdash; DESTIN <span class="label tbd-label">COMING SOON</span></h2>
+            </div>
+        </a>
+
+        <a href="mbtrack.html">
+            <div class="version tbd">
+                <h2>THE TRACK &mdash; MYRTLE BEACH <span class="label tbd-label">COMING SOON</span></h2>
+            </div>
+        </a>
+
+        <a href="pftrack.html">
+            <div class="version tbd">
+                <h2>THE TRACK &mdash; PIGEON FORGE <span class="label tbd-label">COMING SOON</span></h2>
+            </div>
+        </a>
+
+        <div class="footer" id="footer-container"></div>
     </div>
-   </div>
- <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

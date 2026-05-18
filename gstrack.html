@@ -3,48 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="icon" href="logo_default.png" type="image/png"> -->
-    <title>The Track Family Fun Parks</title>
-    <meta name="description" content="Park Information">
+    <link rel="icon" href="images/gs-logo.jpeg" type="image/jpeg">
+    <title>Gulf Shores | The Track Family Fun Parks</title>
+    <meta name="description" content="Prices and park information for The Track Gulf Shores">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
-     <button class="menu-btn" id="menuBtn">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
 
-   
-  <nav class="sidebar" id="sidebar">
+    <nav class="sidebar" id="sidebar">
+        <div id="sidebar-container"></div>
+    </nav>
 
-    <div id="sidebar-container"></div>
+    <!-- Overlay (mobile) -->
+    <div class="overlay" id="overlay"></div>
 
-  </nav> 
+    <div class="main-content" id="mainContent">
 
-  
-  <!-- Overlay (for mobile) -->
-  <div class="overlay" id="overlay"></div>
-  <div class="main-content" id="mainContent">
+        <h1>THE TRACK &mdash; GULF SHORES</h1>
+        <address>
+            3200 Gulf Shores Parkway, Gulf Shores, AL 36542<br>
+            <a href="tel:+12512700209">(251) 270-0209</a>
+        </address>
+        <a class="website" href="https://funatthetrack.com/pages/gulf-shores-location">funatthetrack.com &rarr;</a>
 
-    <!--Main Content-->
-    <div>
-        <h1>THE TRACK - GULF SHORES<br>3200 Gulf Shores Pkwy<br>Gulf Shores, Al 36542<br><a class="website" href="https://funatthetrack.com/pages/gulf-shores-location">www.funatthetrack.com</a> </h1>
-        <!--<div class="dark" >
-        <button id="theme-toggle">Toggle Dark Mode</button>
-        </div> -->
-        <div>
-            <h2>Price and Information</h2>
-            <p>Click Images for Full Screen</p>
-            <img src="images/GS Info.jpg" alt="Click to view full screen" class="fullscreen-image"></img>
-            <img src="images/GS Park Map.jpg" alt="Click to view full screen" class="fullscreen-image"></img>
-            <div>
-              <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1BQuodQdqMxhIdBQ0hMnx4mHgbzrk43M&ehbc=2E312F&noprof=1" width= "100%" height="480"></iframe>
-            </div>
-        </div>
-    
-        <div class="footer" id="footer-container">
-            
-        </div>
+        <!-- Go-Karts -->
+        <section class="pricing-section">
+            <h2>Go-Karts <span class="driver-note">* Must be 16 with valid ID to drive a passenger</span></h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr><th>Track</th><th>Height Requirement</th><th>Points</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Family Track (single)</td><td>4'6" &amp; over</td><td>9</td></tr>
+                    <tr><td>Family Track (double) *</td><td>Driver: 4'6" &amp; over</td><td>18</td></tr>
+                    <tr><td>Family Track &mdash; passenger</td><td>3'0" to under 4'6"</td><td class="free">FREE</td></tr>
+                    <tr><td>Super Track</td><td>4'8" &amp; over</td><td>10</td></tr>
+                    <tr><td>Rookie Track</td><td>4'0" &amp; over</td><td>5</td></tr>
+                    <tr><td>Wild Woody (single)</td><td>4'8" &amp; over</td><td>12</td></tr>
+                    <tr><td>Wild Woody (double) *</td><td>Driver: 4'8" &amp; over</td><td>24</td></tr>
+                    <tr><td>Wild Woody &mdash; passenger</td><td>3'0" to under 4'8"</td><td class="free">FREE</td></tr>
+                    <tr><td>Slick Track</td><td>5'0" &amp; over</td><td>12</td></tr>
+                </tbody>
+            </table>
+            <p class="table-note">Minimum age to ride as a passenger: 3 years old. FREE passenger seats apply when a qualifying adult driver is present.</p>
+        </section>
+
+        <!-- Bumper Boats -->
+        <section class="pricing-section">
+            <h2>Bumper Boats <span class="driver-note">* Must be 18 with valid ID to drive a passenger</span></h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr><th>Ride</th><th>Height Requirement</th><th>Points</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bumper Boats</td><td>3'8" &amp; over</td><td>9</td></tr>
+                    <tr><td>Bumper Boats &mdash; passenger *</td><td>3'4" to under 3'8"</td><td class="free">FREE</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Spinning Coaster -->
+        <section class="pricing-section">
+            <h2>Spinning Coaster</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr><th>Ride</th><th>Height Requirement</th><th>Points</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Spinning Coaster</td><td>4'0" &amp; over</td><td>9</td></tr>
+                    <tr><td>Spinning Coaster &mdash; passenger</td><td>3'0" to under 4'0"</td><td class="free">FREE</td></tr>
+                </tbody>
+            </table>
+            <p class="table-note">Guests under 4'0" must be accompanied by an adult. FREE for passengers with a qualifying adult.</p>
+        </section>
+
+        <!-- Skycoaster -->
+        <section class="pricing-section">
+            <h2>Skycoaster</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr><th>Ride</th><th>Height Requirement</th><th>Points</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Skycoaster Flyer</td><td>4'2" &amp; over</td><td>27</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Mini Golf -->
+        <section class="pricing-section">
+            <h2>Riverboat Adventure Mini-Golf</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr><th>Activity</th><th>Details</th><th>Points</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Mini-Golf (per ball)</td><td>Two 18-hole courses</td><td>12</td></tr>
+                </tbody>
+            </table>
+            <p class="table-note">Ages 4 &amp; under can share a ball with an adult.</p>
+        </section>
+
+        <!-- Kid's Kountry -->
+        <section class="pricing-section">
+            <h2>Kid's Kountry</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr><th>Ride</th><th>Height Requirement</th><th>Points</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Baja Buggies</td><td>3'0" &amp; over</td><td>5</td></tr>
+                    <tr><td>Carousel</td><td>&mdash;</td><td>5</td></tr>
+                    <tr><td>Kiddie Karts</td><td>3'6" to 4'6"</td><td>5</td></tr>
+                    <tr><td>Spin Tops</td><td>3'0" &amp; over</td><td>5</td></tr>
+                    <tr><td>Swings</td><td>3'0" to 4'6"</td><td>5</td></tr>
+                    <tr><td>Train</td><td>3'0" &amp; over</td><td>5</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Park Map -->
+        <section class="pricing-section">
+            <h2>Park Map</h2>
+            <p>Click image for full screen</p>
+            <img src="images/gs-park-map.jpg" alt="Gulf Shores park map" class="fullscreen-image" loading="lazy">
+        </section>
+
+        <div class="footer" id="footer-container"></div>
     </div>
-   </div>
- <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

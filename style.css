@@ -13,7 +13,6 @@ body {
     background-color: #f4f6f9;
     color: #333;
     overflow-x: hidden;
-    transition: margin-left 0.3s ease;
 }
 
 .container {
@@ -23,14 +22,13 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: margin-left 0.3s ease;
 }
 
 /* TYPOGRAPHY & HEADINGS */
 h1 {
     text-align: center;
     color: #2c3e50;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 2.2em;
     border-bottom: 3px solid #3498db;
     padding-bottom: 10px;
@@ -46,9 +44,31 @@ p {
     text-align: center;
 }
 
-/* ==================== RESPONSIVE IMAGES ==================== */
+address {
+    text-align: center;
+    font-style: normal;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 1em;
+    line-height: 1.8;
+}
 
-/* Base image styles - makes ALL images responsive */
+/* LINKS */
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.website {
+    display: block;
+    text-align: center;
+    color: #0098fd;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+/* IMAGES */
 img {
     max-width: 100%;
     height: auto;
@@ -62,57 +82,25 @@ img:hover {
     cursor: pointer;
 }
 
-/* Optional: Style for when the element is in fullscreen mode */
-/* The ::backdrop pseudo-element can also be styled for the background */
 img:-webkit-full-screen {
-    /* For Safari */
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensures the image fits without stretching */
+    object-fit: contain;
 }
 img:fullscreen {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensures the image fits without stretching */
+    object-fit: contain;
 }
 
-/* Specific styling for your version/logo images */
 .version-image,
 .info img {
     width: 120px;
     height: 120px;
-    max-width: 100%;           /* Ensures it never overflows */
-    object-fit: contain;       /* Keeps proper proportions */
+    max-width: 100%;
+    object-fit: contain;
 }
 
-/* Larger screens */
-@media (min-width: 1200px) {
-    .version-image,
-    .info img {
-        width: 140px;
-        height: 140px;
-    }
-}
-
-/* Tablets */
-@media (max-width: 768px) {
-    .version-image,
-    .info img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-    .version-image,
-    .info img {
-        width: 85px;
-        height: 85px;
-    }
-}
-
-/* Optional: If you have large/full-width images */
 .full-image {
     width: 100%;
     height: auto;
@@ -125,6 +113,7 @@ img:fullscreen {
     height: 450px;
 }
 
+/* STATUS BADGE LABELS */
 .live {
     text-align: center;
     background-color: #27ae60;
@@ -175,6 +164,33 @@ img:fullscreen {
     padding: 8px 0;
 }
 
+/* VERSION CARDS */
+.version {
+    background-color: #ffffff;
+    border-left: 6px solid #22cffa;
+    margin-bottom: 25px;
+    padding: 18px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.version:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translate(5px, -5px);
+}
+
+/* Version status border colors — class-based so multiple cards can share a status */
+.version.future { border-left-color: #000000; }
+.version.tbd    { border-left-color: #ac08f8; }
+.version.dev    { border-left-color: #f39c12; }
+.version.live   { border-left-color: #27ae60; }
+.version.og     { border-left-color: #0101ce; }
+
+.version.prior1 { background-color: #8beff7; }
+.version.prior2 { background-color: #beff81; }
+.version.prior3 { background-color: #e4a1f8; }
+
 .version h2 {
     margin: 0 0 12px 0;
     color: #2980b9;
@@ -195,6 +211,13 @@ img:fullscreen {
     margin-top: 5px;
 }
 
+/* Label background colors for inline h2 badges */
+.future-label   { background-color: #000000; }
+.tbd-label      { background-color: #ac08f8; }
+.dev-label      { background-color: #f39c12; }
+.live-label     { background-color: #27ae60; }
+.original-label { background-color: #0101ce; }
+
 .date {
     font-size: 0.9em;
     color: #7f8c8d;
@@ -202,6 +225,15 @@ img:fullscreen {
     font-weight: normal;
 }
 
+.prior {
+    font-size: 1em;
+    color: #3e4444;
+    font-style: italic;
+    font-weight: normal;
+    margin-left: 15px;
+}
+
+/* LISTS */
 ul {
     padding-left: 22px;
     margin: 10px 0 0 0;
@@ -224,6 +256,7 @@ ul strong {
     color: blue;
 }
 
+/* FOOTER */
 .footer {
     text-align: center;
     margin-top: 40px;
@@ -231,54 +264,57 @@ ul strong {
     font-size: 0.9em;
 }
 
-/* VERSION CARDS */
-.version {
-    background-color: #ffffff;
-    border-left: 6px solid #22cffa;
-    margin-bottom: 25px;
-    padding: 18px;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+/* COMING SOON PAGE */
+.coming-soon {
+    text-align: center;
+    padding: 60px 20px;
 }
 
-.version:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transform: translate(5px, -5px);
+.coming-soon .badge {
+    display: inline-block;
+    background-color: #ac08f8;
+    color: white;
+    border-radius: 25px;
+    padding: 6px 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
-/* Version Status Border Colors */
-#future.version { border-left-color: #000000; }
-#tbd.version { border-left-color: #ac08f8; }
-#dev.version { border-left-color: #f39c12; }
-#live.version { border-left-color: #27ae60; }
-#og.version { border-left-color: #0101ce; }
-
-/* Version and Priority */
-#prior1.version {
-    background-color: #8beff7;
-}
-#prior2.version {
-    background-color: #beff81;
-}
-#prior3.version {
-    background-color: #e4a1f8;
+.coming-soon h1 {
+    border-bottom: none;
+    margin-bottom: 10px;
 }
 
-.prior {
+.coming-soon p {
+    color: #666;
+    margin-bottom: 16px;
+    font-size: 1.05em;
+}
+
+.coming-soon .back-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0098fd;
     font-size: 1em;
-    color: #3e4444;
-    font-style: italic;
-    font-weight: normal;
-    margin-left: 15px;
+    text-decoration: underline;
 }
 
-/* Label Backgrounds */
-.future-label { background-color: #000000; }
-.tbd-label { background-color: #ac08f8; }
-.dev-label { background-color: #f39c12; }
-.live-label { background-color: #27ae60; }
-.original-label { background-color: #0101ce; }
+.coming-soon .ext-link {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.coming-soon .ext-link:hover {
+    background-color: #3498db;
+}
 
 /* SIDEBAR NAVIGATION */
 .sidebar {
@@ -293,10 +329,10 @@ ul strong {
     z-index: 1000;
     padding-top: 30px;
     opacity: 0.95;
-    overflow-y: auto; 
+    overflow-y: auto;
     overflow-x: hidden;
-    display: flex;     
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar.open {
@@ -335,25 +371,14 @@ ul strong {
     cursor: pointer;
 }
 
-.navvoid:hover {
-  background-color: black !important; 
+#sidebar a.active {
+    background: black;
+    color: #fff;
 }
 
-#sidebar a.active { 
-  background: black; 
-  color: #fff; 
-}
-#toggle-sidebar { 
-  display: none; 
-}
-
-/* Custom Scrollbar for Sidebar (WebKit) */
-.sidebar ul::-webkit-scrollbar {
-    width: 8px;
-}
-.sidebar ul::-webkit-scrollbar-track {
-    background: transparent;
-}
+/* Custom scrollbar for sidebar */
+.sidebar ul::-webkit-scrollbar       { width: 8px; }
+.sidebar ul::-webkit-scrollbar-track { background: transparent; }
 .sidebar ul::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 4px;
@@ -362,7 +387,7 @@ ul strong {
     background: rgba(255, 255, 255, 0.5);
 }
 
-/* Hamburger Button */
+/* HAMBURGER BUTTON */
 .menu-btn {
     position: fixed;
     top: 15px;
@@ -387,7 +412,7 @@ ul strong {
     transform: scale(1.1);
 }
 
-/* Main Content Shift */
+/* MAIN CONTENT */
 .main-content {
     margin-left: 0;
     padding: 20px;
@@ -399,7 +424,7 @@ ul strong {
     margin-left: 250px;
 }
 
-/* Overlay (Mobile) */
+/* OVERLAY (mobile) */
 .overlay {
     position: fixed;
     top: 0;
@@ -418,79 +443,7 @@ ul strong {
     visibility: visible;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-    h1 {
-        font-size: 1.8em;
-    }
-    .version h2 {
-        font-size: 1.2em;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .version h2 .label {
-        margin-top: 8px;
-    }
-    .info {
-        height: auto;
-    }
-
-    /* Sidebar Mobile */
-    .sidebar {
-        width: 200px;
-        left: -200px;
-    }
-    .sidebar.open {
-        left: 0;
-    }
-    .content-shift {
-        margin-left: 200px;
-    }
-    .menu-btn {
-        left: 10px;
-        top: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 12px;
-    }
-    .container {
-        padding: 16px;
-    }
-    h1 {
-        font-size: 1.6em;
-    }
-    .version {
-        padding: 14px;
-    }
-    .version h2 {
-        font-size: 1.1em;
-    }
-}
-
-.navheader {
-    height: 125px;
-    margin: 0px 50px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-.website {
-    color: #0098fd;
-}
-
-
-
-/* Accordion for Milestones */
+/* ACCORDION */
 .collapsible {
     cursor: pointer;
     padding: 18px;
@@ -518,45 +471,226 @@ a {
     background-color: #f9f9f9;
 }
 
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
+.navheader {
+    height: 125px;
+    margin: 0px 50px;
 }
 
-[data-theme="dark"] {
-    --bg-color: #000000;
-    --text-color: #ffffff;
+/* PRICING — point info banner */
+.point-info {
+    background: #eaf4ff;
+    border-left: 4px solid #3498db;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 20px 0 30px;
+    font-size: 1em;
+    line-height: 1.8;
+    color: #2c3e50;
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.4s ease, color 0.4s ease;
+.point-info em {
+    color: #c0392b;
 }
 
-h1 {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.4s ease, color 0.4s ease;
+/* PRICING — section wrapper */
+.pricing-section {
+    margin-bottom: 36px;
 }
 
-h2 {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-.dark {
+.pricing-section h2 {
+    font-size: 1.4em;
+    text-align: left;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: #2c3e50;
 }
 
-#theme-toggle {
-     background-color: #000000;
-     color: white;
-     border-radius: 25px;
-     font-size: medium;
-     padding: 5px;
-    
+.driver-note {
+    font-size: 0.6em;
+    color: #c0392b;
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* PRICING — tables */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+    font-size: 0.95em;
+}
+
+.pricing-table th {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.pricing-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    vertical-align: top;
+    color: #333;
+    text-align: left;
+}
+
+.pricing-table tr:last-child td {
+    border-bottom: none;
+}
+
+.pricing-table tr:nth-child(even) td {
+    background: #f9f9f9;
+}
+
+.pricing-table td:last-child {
+    font-weight: bold;
+    color: #27ae60;
+    white-space: nowrap;
+}
+
+.pricing-table td.free {
+    color: #3498db;
+}
+
+.table-note {
+    font-size: 0.85em;
+    color: #666;
+    text-align: left;
+    margin-top: 6px;
+    font-style: italic;
+    padding-left: 2px;
+}
+
+/* PRICING — point package cards */
+.package-cards {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 14px 0;
+}
+
+.package-card {
+    background: #fff;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px 16px;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    max-width: 190px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.package-card.featured {
+    border-color: #27ae60;
+    background: #f0fff4;
+}
+
+.package-card .pts {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.package-card .price {
+    font-size: 1.25em;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+.package-card .savings {
+    font-size: 0.82em;
+    color: #888;
+}
+
+/* Phone link in address */
+address a {
+    color: #0098fd;
+}
+
+/* ============================
+   DESKTOP — persistent sidebar
+   ============================ */
+@media (min-width: 1024px) {
+    .sidebar {
+        left: 0;
+    }
+    .main-content {
+        margin-left: 250px;
+    }
+    .menu-btn {
+        display: none;
+    }
+    .overlay {
+        display: none;
+    }
+}
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+   ============================ */
+@media (max-width: 1023px) and (min-width: 769px) {
+    h1 { font-size: 1.9em; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 20px; }
+    h1 { font-size: 1.8em; }
+
+    .version h2 {
+        font-size: 1.2em;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .version h2 .label { margin-top: 8px; }
+    .info { height: auto; }
+
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+    .sidebar.open { left: 0; }
+    .content-shift { margin-left: 200px; }
+
+    .menu-btn {
+        left: 10px;
+        top: 10px;
+    }
+
+    .version-image,
+    .info img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    body { padding: 12px; }
+    .container { padding: 16px; }
+    h1 { font-size: 1.6em; }
+    .version { padding: 14px; }
+    .version h2 { font-size: 1.1em; }
+
+    .version-image,
+    .info img {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .version-image,
+    .info img {
+        width: 140px;
+        height: 140px;
+    }
 }
